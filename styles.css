@@ -13,11 +13,26 @@ header, footer {
   padding: 1em;
 }
 section {
+  background-image: url('imagen.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+  background-position: center;
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 1em;
+}
+aside{
+  background-color: rgba(7, 7, 7, 0.5);
+  border-radius: 7px;
+  margin: auto;
+}
+p{
+  color: #ccc;
 }
 form {
   width: 100%;
@@ -32,7 +47,7 @@ input[type="text"], input[type="submit"] {
   border-radius: 4px;
 }
 input[type="submit"] {
-  background-color: #333;
+  background-color: #15137a;
   color: #fff;
   border: none;
   cursor: pointer;
