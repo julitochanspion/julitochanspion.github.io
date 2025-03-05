@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Móvil</title>
+  <link rel="stylesheet" href="./Style/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Encabezado</h1>
+  </header>
+  <section>
+    <form id="form">
+      <input type="text" name="email" id="email">
+      <input type="submit" id="button" value="Enviar">
+    </form>
+  </section>
+  <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+      <script type="text/javascript">
+        emailjs.init('oE1VW4mHla6GrWPWZ')
+      </script>
+  <footer>
+    <p>Pie de página</p>
+  </footer>
+</body>
+<script>
+  const btn = document.getElementById('button');
+
+document.getElementById('form')
+.addEventListener('submit', function(event) {
+event.preventDefault();
+
+btn.value = 'enviando...';
+
+const serviceID = 'default_service';
+const templateID = 'template_agunsd3';
+
+emailjs.sendForm(serviceID, templateID, this)
+.then(() => {
+btn.value = 'Send Email';
+alert('Correo enviado');
+}, (err) => {
+btn.value = 'Send Email';
+alert(JSON.stringify(err));
+});
+});
+</script>
+</html>
